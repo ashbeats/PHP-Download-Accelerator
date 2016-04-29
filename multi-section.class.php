@@ -13,8 +13,9 @@
  */
 
 class DownloadAccelerator
-{    
-	public $tmp_folder = "D:/xampp 2/Multithread-downloader/tmp/"; 	
+{
+    
+	public $tmp_folder = sys_get_temp_dir(); 	
 	public $max_sections = 5;
 	
     function __construct()
@@ -25,7 +26,7 @@ class DownloadAccelerator
 	
 	
 	
-	public function download($url, $username='', $password='')
+	public function download($url, $username=null, $password=null)
 	{
 		
         $timer = new Timer();
